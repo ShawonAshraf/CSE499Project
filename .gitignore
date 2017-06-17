@@ -813,4 +813,7 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+# ignore the cloned tensorflow repo
+tensorflow/
+
 # End of https://www.gitignore.io/api/osx,c++,cmake,clion,linux,swift,xcode,pycharm,windows,intellij,phpstorm,webstorm,virtualenv,objective-c,aptanastudio,visualstudio,visualstudiocode
