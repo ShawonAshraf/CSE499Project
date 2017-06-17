@@ -826,6 +826,8 @@ training_summaries/basic/train/
 training_summaries/basic/validation/
 *.pb
 *.local
+BasicClassifier/inception/inception-2015-12-05.tgz
+BasicClassifier/inception/classify_image_graph_def.pb
 
 
 # End of https://www.gitignore.io/api/osx,c++,cmake,clion,linux,swift,xcode,pycharm,windows,intellij,phpstorm,webstorm,virtualenv,objective-c,aptanastudio,visualstudio,visualstudiocode
