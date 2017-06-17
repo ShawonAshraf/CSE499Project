@@ -824,6 +824,8 @@ retrained_graph.pb
 retrained_labels.txt
 training_summaries/basic/train/
 training_summaries/basic/validation/
+*.pb
+*.local
 
 
 # End of https://www.gitignore.io/api/osx,c++,cmake,clion,linux,swift,xcode,pycharm,windows,intellij,phpstorm,webstorm,virtualenv,objective-c,aptanastudio,visualstudio,visualstudiocode
