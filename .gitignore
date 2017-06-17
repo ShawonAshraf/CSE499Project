@@ -831,5 +831,9 @@ BasicClassifier/inception/classify_image_graph_def.pb
 
 .vscode
 
+# git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch BasicClassifier/inception/inception-2015-12-05.tgz'
+# git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch BasicClassifier/inception/classify_image_graph_def.pb'
+# git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch *.local'
+
 
 # End of https://www.gitignore.io/api/osx,c++,cmake,clion,linux,swift,xcode,pycharm,windows,intellij,phpstorm,webstorm,virtualenv,objective-c,aptanastudio,visualstudio,visualstudiocode
