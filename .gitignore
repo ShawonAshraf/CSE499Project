@@ -209,7 +209,7 @@ CTestTestfile.cmake
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
-build/
+build/না?
 DerivedData/
 
 ## Various settings
@@ -817,6 +817,7 @@ __pycache__/
 # ignore image dirs to minimize
 tensorflow/
 img_data/
+training_summaries/
 bottlenecks/
 inception/
 img_test/
