@@ -62,4 +62,4 @@ for image in process_list:
     classify(image)
     end_time = time.time()
     exec_time = end_time - init_time
-    print(" in {} ms\n\n".format(exec_time))
+    print(" in {} s\n\n".format(exec_time))
