@@ -42,3 +42,9 @@ to install `python3` pakages.
 - It will show a score and the category.
 
 - You can also use `classify_fruits.py` , add the img paths in the `images` list.
+
+
+## Update for Dataset
+
+- Initial Dataset : http://bit.ly/2sL1t3I
+- Dataset V2 (Contains Banana images) on 23 June, 2017 : http://bit.ly/2t3mfM0
