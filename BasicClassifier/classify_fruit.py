@@ -32,7 +32,7 @@ def classify(image_path):
         for node_id in top_k:
             human_string = label_lines[node_id]
             score = predictions[0][node_id]
-            print('Input is : {} \twith score = {} %'.format(human_string, score * 100))
+            print('Category : {} \nScore = {} %'.format(human_string, score * 100))
 
         print('\nDONE===========================\n\n')
 
@@ -49,6 +49,5 @@ images = [
 ]
 
 for image in images:
-    print('For image = {}'.format(image))
+    print('Input image = {}'.format(image))
     classify(image)
-
