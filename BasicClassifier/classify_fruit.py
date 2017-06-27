@@ -47,7 +47,9 @@ mango_images = [
     'img_test/ripe_mango_1.jpg',
     'img_test/ripe_mango_2.jpg',
     'img_test/rotten_mango.jpg',
-    'img_test/mango_001.jpg'
+    'img_test/mango_001.jpg',
+    'img_test/Mango_Ataulfo.jpg',
+    'img_test/gvr.jpg',
 ]
 
 banana_images = [
