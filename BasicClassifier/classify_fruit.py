@@ -57,9 +57,12 @@ banana_images = [
 process_list = mango_images + banana_images
 
 for image in process_list:
-    print('Input image = {}'.format(image))
-    init_time = time.time()
-    classify(image)
-    end_time = time.time()
-    exec_time = end_time - init_time
-    print(" in {} s\n\n".format(exec_time))
+    try:
+        print('Input image = {}'.format(image))
+        init_time = time.time()
+        classify(image)
+        end_time = time.time()
+        exec_time = end_time - init_time
+        print(" in {} s\n\n".format(exec_time))
+    except Exception:
+        print('{} not found\n\n'.format(image))
