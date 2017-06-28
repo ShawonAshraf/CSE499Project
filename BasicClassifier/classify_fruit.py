@@ -1,5 +1,6 @@
 import os, sys
 import tensorflow as tf
+import time
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
@@ -28,10 +29,42 @@ def classify(image_path):
         # Sort to show labels of first prediction in order of confidence
         top_k = predictions[0].argsort()[-len(predictions[0]):][::-1]
     
-        print('\nClassified input image : Results :\n')
+        print('Result for {} :\n'.format(image_path))
         for node_id in top_k:
             human_string = label_lines[node_id]
             score = predictions[0][node_id]
-            print('Input is : {} \twith score = {} %'.format(human_string, score * 100))
+            print('Category : {} \nScore = {} %'.format(human_string, score * 100))
 
-        print('\nDONE===========================\n\n')
+        print('\nDONE===========================', end='')
+
+
+# now testing
+
+mango_images = [
+    'img_test/green_mangoes.jpg',
+    'img_test/green_mango_2.jpg',
+    'img_test/overripe_ataulfo_mango.png',
+    'img_test/ripe_mango_1.jpg',
+    'img_test/ripe_mango_2.jpg',
+    'img_test/rotten_mango.jpg',
+    'img_test/mango_001.jpg',
+    'img_test/Mango_Ataulfo.jpg',
+    'img_test/gvr.jpg',
+]
+
+banana_images = [
+    'img_test/banana.jpeg'
+]
+
+process_list = mango_images + banana_images
+
+for image in process_list:
+    try:
+        print('Input image = {}'.format(image))
+        init_time = time.time()
+        classify(image)
+        end_time = time.time()
+        exec_time = end_time - init_time
+        print(" in {} s\n\n".format(exec_time))
+    except Exception:
+        print('{} not found\n\n'.format(image))

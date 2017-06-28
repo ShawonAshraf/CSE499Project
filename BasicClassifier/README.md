@@ -3,24 +3,24 @@
 ## Create the anaconda env using the requirement files
 Choose the file that matches your OS. However I've found Windows to be troublesome since Tensorflow doesn't provide any support at all for Windows.
 
-### Creating ENV
-- Basic syntax to create env is 
+### Installing packages
 
-` conda create --name <env_name> <python_version> <package_list>`
+#### Packages to install : 
 
-- We are using    `python=3.5.2`
-- So just use the requirements files. Example -
+* numpy
+* scikit-learn
+* matplotlib
+* jupyter
+* tensorflow
 
-#### For macOS :
+Install the following packages one by one using `pip`. Before that make sure you've `python3` installed. If you're on a Linux Distro and your Distro includes both `python2` and `python3`, use `pip3` instead of `pip` 
+to install `python3` pakages.
 
-`conda create --name cse499 --file requirements_macos64.txt`
+**Syntax** : `pip install <package>`
 
-#### For Linux (Ubuntu, Mint, Fedora .... must be 64 bit) :
+**Example** : `pip install tensorflow`
 
-`conda create --name cse499 --file requirements_linux64.txt`
 
-- Hit enter, let it download and create the env.
-- Then activate it with `source activate cse499`
 
 ## Running the Classifier
 
@@ -40,3 +40,11 @@ Choose the file that matches your OS. However I've found Windows to be troubleso
 `python label_image.py <your_img_path>` 
 
 - It will show a score and the category.
+
+- You can also use `classify_fruits.py` , add the img paths in the `images` list.
+
+
+## Update for Dataset
+
+- Initial Dataset : http://bit.ly/2sL1t3I
+- Dataset V2 (Contains Banana images) on 23 June, 2017 : http://bit.ly/2t3mfM0
