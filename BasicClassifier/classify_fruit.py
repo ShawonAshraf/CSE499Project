@@ -66,5 +66,5 @@ for image in process_list:
         end_time = time.time()
         exec_time = end_time - init_time
         print(" in {} s\n\n".format(exec_time))
-    except Exception:
+    except FileNotFoundError:
         print('{} not found\n\n'.format(image))
