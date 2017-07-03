@@ -1,9 +1,8 @@
-import os
+import os, inspect
 import tensorflow as tf
 
 from matplotlib import pyplot as plt
 from matplotlib import image as mat_img
-
 
 class Classifier:
     def __init__(self, img_path):
@@ -11,8 +10,23 @@ class Classifier:
         self.image_name = os.path.split(self.img_path)[-1]
         os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
+        # change working dir
+        self.__script_path__ = os.path.abspath('FruitClassifier/')
+        os.chdir(self.__script_path__)
+
+        # paths for training label, graph
+        self.__relativePath_trainingLabels__ = '../../Training/retrained_labels.txt'
+        self.__relativePath_trainingGraph__ = '../../Training/retrained_graph.pb'
+
+
+
     def __str__(self):
         return 'Image Classifier : {}'.format(type(self))
+
+
+    def __get__path__(self, relativePath):
+        abs_path = os.path.abspath(relativePath)
+        return abs_path
 
     def __get_max_confidence_score__(self, score_dict):
         # get the dictionary and find the max confidence score
@@ -28,11 +42,11 @@ class Classifier:
 
             # load labels
             label_lines = [line.rstrip() for line
-                           in tf.gfile.FastGFile('../../Training/retrained_labels.txt')]
+                           in tf.gfile.FastGFile(self.__get__path__(self.__relativePath_trainingLabels__))]
 
             # graph from file
+            graph_file = tf.gfile.FastGFile(self.__get__path__(self.__relativePath_trainingGraph__), 'rb')
 
-            graph_file = tf.gfile.FastGFile('../../Training/retrained_graph.pb', 'rb')
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(graph_file.read())
             tf.import_graph_def(graph_def, name='')
@@ -82,10 +96,9 @@ class Classifier:
 
 # test
 
-img_path = '../../img_test/green_mangoes.jpg'
-cls = Classifier(img_path)
-
-fruit, score = cls.classify_fruit()
-print('Result for image = {}: \n'.format(cls.image_name))
-print('Fruit : {}\nConfidence Score : {}\n\n'.format(fruit, score))
-# cls.plot_img()
+# img_path = '../../img_test/green_mangoes.jpg'
+# cls = Classifier(img_path)
+#
+# fruit, score = cls.classify_fruit()
+# print('Result for image = {}: \n'.format(cls.image_name))
+# print('Fruit : {}\nConfidence Score : {}\n\n'.format(fruit, score))
