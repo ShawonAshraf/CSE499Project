@@ -28,11 +28,11 @@ class Classifier:
 
             # load labels
             label_lines = [line.rstrip() for line
-                           in tf.gfile.FastGFile('../Training/retrained_labels.txt')]
+                           in tf.gfile.FastGFile('../../Training/retrained_labels.txt')]
 
             # graph from file
 
-            graph_file = tf.gfile.FastGFile('../Training/retrained_graph.pb', 'rb')
+            graph_file = tf.gfile.FastGFile('../../Training/retrained_graph.pb', 'rb')
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(graph_file.read())
             tf.import_graph_def(graph_def, name='')
@@ -82,7 +82,7 @@ class Classifier:
 
 # test
 
-img_path = '../img_test/green_mangoes.jpg'
+img_path = '../../img_test/green_mangoes.jpg'
 cls = Classifier(img_path)
 
 fruit, score = cls.classify_fruit()
