@@ -11,13 +11,15 @@ class Classifier:
         self.image_name = os.path.split(self.img_path)[-1]
         os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-
     def __str__(self):
         return 'Image Classifier : {}'.format(type(self))
 
     def __get_max_confidence_score__(self, score_dict):
         # get the dictionary and find the max confidence score
-        pass
+        max_score_key = max(score_dict, key=lambda k: score_dict[k])
+        max_score_tuple = (max_score_key, score_dict[max_score_key])
+
+        return max_score_tuple
 
     def classify_fruit(self):
         try:
@@ -45,7 +47,7 @@ class Classifier:
             # sorts the result in descending order
             top_predict = predictions[0].argsort()[-len(predictions[0]):][::-1]
 
-            print('Result for {} :\n'.format(self.image_name))
+            # print('Result for {} :\n'.format(self.image_name))
             # node_id = 4  # gets the best result since it's sorted
             #
             # label_string = label_lines[node_id]
@@ -59,12 +61,15 @@ class Classifier:
                 confidence_score = predictions[0][node_id]
 
                 # add to score_dict as key value pair
+                score_dict[label_string] = confidence_score
 
             # call __get_max_confidence_score__ here
+            max_score_tuple = self.__get_max_confidence_score__(score_dict)
+
+            return max_score_tuple
 
         except Exception:
             print('Error! Image not found')
-
 
     # plots the image using matplotlib
     def plot_img(self):
@@ -74,11 +79,17 @@ class Classifier:
         plt.show()
 
 
+    # get image name from path
+    def get_image_name(self):
+        return self.image_name
 
 
 # test
 
-img_path = '../BasicClassifier/img_test/gvr.jpg'
+img_path = '../BasicClassifier/img_test/green_mangoes.jpg'
 cls = Classifier(img_path)
-cls.classify_fruit()
+
+fruit, score = cls.classify_fruit()
+print('Result for image = {}: \n'.format(cls.image_name))
+print('Fruit : {}\nConfidence Score : {}\n\n'.format(fruit, score))
 # cls.plot_img()
