@@ -8,13 +8,18 @@ try:
 except ImportError:
     print('Error')
 
-
 # test
 
-print(inspect.getfile(Classifier))
-img_path = get_path('../img_test/green_mangoes.jpg')
-cls = Classifier(img_path)
+if __name__ == '__main__':
+    img_path = get_path('../img_test/green_mangoes.jpg')
+    label_path = get_path('../Training/retrained_labels.txt')
+    graph_path = get_path('../Training/retrained_graph.pb')
 
-fruit, score = cls.classify_fruit()
-print('Result for image = {}: \n'.format(cls.image_name))
-print('Fruit : {}\nConfidence Score : {}\n\n'.format(fruit, score))
+    # create the classifier
+    # supply the image path, training label and graph file path
+
+    cls = Classifier(img_path, label_path, graph_path)
+    fruit, score = cls.classify_fruit()
+
+    print('Result for image = {}: \n'.format(cls.image_name))
+    print('Fruit : {}\nConfidence Score : {}\n\n'.format(fruit, score))

@@ -4,29 +4,21 @@ import tensorflow as tf
 from matplotlib import pyplot as plt
 from matplotlib import image as mat_img
 
+import traceback
+
+
 class Classifier:
-    def __init__(self, img_path):
-        self.img_path = img_path
-        self.image_name = os.path.split(self.img_path)[-1]
+    def __init__(self, img_path, label_path, graph_path):
+        # set tensorflow log level
         os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-        # change working dir
-        self.__script_path__ = os.path.abspath('FruitClassifier/')
-        os.chdir(self.__script_path__)
-
-        # paths for training label, graph
-        self.__relativePath_trainingLabels__ = '../../Training/retrained_labels.txt'
-        self.__relativePath_trainingGraph__ = '../../Training/retrained_graph.pb'
-
-
+        self.img_path = img_path
+        self.image_name = os.path.split(self.img_path)[-1]
+        self.label_path = label_path
+        self.graph_path = graph_path
 
     def __str__(self):
         return 'Image Classifier : {}'.format(type(self))
-
-
-    def __get__path__(self, relativePath):
-        abs_path = os.path.abspath(relativePath)
-        return abs_path
 
     def __get_max_confidence_score__(self, score_dict):
         # get the dictionary and find the max confidence score
@@ -42,10 +34,10 @@ class Classifier:
 
             # load labels
             label_lines = [line.rstrip() for line
-                           in tf.gfile.FastGFile(self.__get__path__(self.__relativePath_trainingLabels__))]
+                           in tf.gfile.FastGFile(self.label_path)]
 
             # graph from file
-            graph_file = tf.gfile.FastGFile(self.__get__path__(self.__relativePath_trainingGraph__), 'rb')
+            graph_file = tf.gfile.FastGFile(self.graph_path, 'rb')
 
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(graph_file.read())
@@ -83,8 +75,7 @@ class Classifier:
             return max_score_tuple
 
         except Exception:
-            print('Error! Image not found, quitting')
-            exit(-1)
+            traceback.print_exc()
 
     # plots the image using matplotlib
     def plot_img(self):
@@ -92,7 +83,6 @@ class Classifier:
         plt.axis('off')
         plt.imshow(image)
         plt.show()
-
 
 # test
 
