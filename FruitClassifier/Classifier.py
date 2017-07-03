@@ -15,6 +15,10 @@ class Classifier:
     def __str__(self):
         return 'Image Classifier : {}'.format(type(self))
 
+    def __get_max_confidence_score__(self, score_dict):
+        # get the dictionary and find the max confidence score
+        pass
+
     def classify_fruit(self):
         try:
             # read in image data
@@ -42,12 +46,21 @@ class Classifier:
             top_predict = predictions[0].argsort()[-len(predictions[0]):][::-1]
 
             print('Result for {} :\n'.format(self.image_name))
-            node_id = 1  # gets the best result since it's sorted
+            # node_id = 4  # gets the best result since it's sorted
+            #
+            # label_string = label_lines[node_id]
+            # confidence_score = predictions[0][node_id]
+            #
+            # print('Label : {}\t Score : {}\n\n'.format(label_string, confidence_score))
 
-            label_string = label_lines[node_id]
-            confidence_score = predictions[0][node_id]
+            score_dict = {}
+            for node_id in top_predict:
+                label_string = label_lines[node_id]
+                confidence_score = predictions[0][node_id]
 
-            print('Label : {}\t Score : {}\n\n'.format(label_string, confidence_score))
+                # add to score_dict as key value pair
+
+            # call __get_max_confidence_score__ here
 
         except Exception:
             print('Error! Image not found')
