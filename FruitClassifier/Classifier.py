@@ -86,7 +86,7 @@ class Classifier:
 
 # test
 
-img_path = '../BasicClassifier/img_test/green_mangoes.jpg'
+img_path = '../img_test/green_mangoes.jpg'
 cls = Classifier(img_path)
 
 fruit, score = cls.classify_fruit()

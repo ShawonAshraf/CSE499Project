@@ -11,10 +11,10 @@ def classify(image_path):
 
     # Loads label file, strips off carriage return
     label_lines = [line.rstrip() for line 
-                   in tf.gfile.GFile("retrained_labels.txt")]
+                   in tf.gfile.GFile("../Training/retrained_labels.txt")]
 
     # Unpersists graph from file
-    with tf.gfile.FastGFile("retrained_graph.pb", 'rb') as f:
+    with tf.gfile.FastGFile("../Training/retrained_graph.pb", 'rb') as f:
         graph_def = tf.GraphDef()
         graph_def.ParseFromString(f.read())
         tf.import_graph_def(graph_def, name='')
@@ -41,19 +41,19 @@ def classify(image_path):
 # now testing
 
 mango_images = [
-    'img_test/green_mangoes.jpg',
-    'img_test/green_mango_2.jpg',
-    'img_test/overripe_ataulfo_mango.png',
-    'img_test/ripe_mango_1.jpg',
-    'img_test/ripe_mango_2.jpg',
-    'img_test/rotten_mango.jpg',
-    'img_test/mango_001.jpg',
-    'img_test/Mango_Ataulfo.jpg',
-    'img_test/gvr.jpg',
+    '../img_test/green_mangoes.jpg',
+    '../img_test/green_mango_2.jpg',
+    '../img_test/overripe_ataulfo_mango.png',
+    '../img_test/ripe_mango_1.jpg',
+    '../img_test/ripe_mango_2.jpg',
+    '../img_test/rotten_mango.jpg',
+    '../img_test/mango_001.jpg',
+    '../img_test/Mango_Ataulfo.jpg',
+    '../img_test/gvr.jpg',
 ]
 
 banana_images = [
-    'img_test/banana.jpeg'
+    '../img_test/banana.jpeg'
 ]
 
 process_list = mango_images + banana_images
