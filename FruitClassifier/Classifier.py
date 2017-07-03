@@ -28,11 +28,11 @@ class Classifier:
 
             # load labels
             label_lines = [line.rstrip() for line
-                           in tf.gfile.FastGFile('../BasicClassifier/retrained_labels.txt')]
+                           in tf.gfile.FastGFile('../Training/retrained_labels.txt')]
 
             # graph from file
 
-            graph_file = tf.gfile.FastGFile('../BasicClassifier/retrained_graph.pb', 'rb')
+            graph_file = tf.gfile.FastGFile('../Training/retrained_graph.pb', 'rb')
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(graph_file.read())
             tf.import_graph_def(graph_def, name='')
@@ -69,7 +69,8 @@ class Classifier:
             return max_score_tuple
 
         except Exception:
-            print('Error! Image not found')
+            print('Error! Image not found, quitting')
+            exit(-1)
 
     # plots the image using matplotlib
     def plot_img(self):
@@ -77,11 +78,6 @@ class Classifier:
         plt.axis('off')
         plt.imshow(image)
         plt.show()
-
-
-    # get image name from path
-    def get_image_name(self):
-        return self.image_name
 
 
 # test
