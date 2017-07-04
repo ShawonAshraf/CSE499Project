@@ -11,7 +11,7 @@ except ImportError:
 # test
 
 if __name__ == '__main__':
-    img_path = get_path('../img_test/green_mangoes.jpg')
+    img_path = get_path('../img_test/rotten_mango.jpg')
     label_path = get_path('../Training/retrained_labels.txt')
     graph_path = get_path('../Training/retrained_graph.pb')
 
@@ -22,4 +22,7 @@ if __name__ == '__main__':
     fruit, score = cls.classify_fruit()
 
     print('Result for image = {}: \n'.format(cls.image_name))
-    print('Fruit : {}\nConfidence Score : {}\n\n'.format(fruit, score))
+    print('Fruit : {}\nConfidence Score : {}%\n\n'.format(fruit, score * 100))
+
+    # plot the image using plot_img
+    # cls.plot_img()
