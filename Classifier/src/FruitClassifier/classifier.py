@@ -27,7 +27,7 @@ class Classifier:
 
         return max_score_tuple
 
-    def classify_fruit(self):
+    def classify(self):
         try:
             # read in image data
             image_data = tf.gfile.FastGFile(self.img_path, 'rb').read()
@@ -48,6 +48,7 @@ class Classifier:
             sess = tf.Session()
             softmax_tensor = sess.graph.get_tensor_by_name('final_result:0')
 
+            # pass the image for predictive analysis
             predictions = sess.run(softmax_tensor, {'DecodeJpeg/contents:0': image_data})
 
             # sorts the result in descending order

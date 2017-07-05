@@ -19,7 +19,7 @@ if __name__ == '__main__':
     # supply the image path, training label and graph file path
 
     cls = Classifier(img_path, label_path, graph_path)
-    fruit, score = cls.classify_fruit()
+    fruit, score = cls.classify()
 
     print('Result for image = {}: \n'.format(cls.image_name))
     print('Fruit : {}\nConfidence Score : {}%\n\n'.format(fruit, score * 100))
