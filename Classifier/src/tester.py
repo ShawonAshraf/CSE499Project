@@ -1,17 +1,17 @@
 import os, sys, inspect
 
-sys.path.insert(0, 'Classifier')
+sys.path.insert(0, 'FruitClassifier')
 sys.path.insert(1, 'PathGetter')
 try:
-    from Classifier.classifier import Classifier
+    from FruitClassifier.classifier import Classifier
     from PathGetter.path_getter import get_path
 except ImportError:
-    print('Error')
+    print('Import Error')
 
 # test
 
 if __name__ == '__main__':
-    img_path = get_path('../img_test/rotten_mango.jpg')
+    img_path = get_path('../img_test/mango_001.jpg')
     label_path = get_path('../Training/retrained_labels.txt')
     graph_path = get_path('../Training/retrained_graph.pb')
 
