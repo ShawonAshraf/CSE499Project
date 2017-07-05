@@ -82,6 +82,7 @@ class Classifier:
     def plot_img(self):
         image = mat_img.imread(self.img_path)
         plt.axis('off')
+        plt.suptitle(self.image_name)
         plt.imshow(image)
         plt.show()
 
