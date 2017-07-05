@@ -1,9 +1,9 @@
 import os, sys, inspect
 
-sys.path.insert(0, 'FruitClassifier')
+sys.path.insert(0, 'Classifier')
 sys.path.insert(1, 'PathGetter')
 try:
-    from FruitClassifier.classifier import Classifier
+    from Classifier.classifier import Classifier
     from PathGetter.path_getter import get_path
 except ImportError:
     print('Error')
