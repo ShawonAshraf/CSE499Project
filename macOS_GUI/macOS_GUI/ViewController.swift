@@ -20,6 +20,7 @@ class ViewController: NSViewController {
     var labelPath: String!
     var graphPath: String!
     
+    let scriptPath = "/Users/shawon/Codes/ClassCodes/CSE499Project/gui_linker.py"
     
     
     override func viewDidLoad() {
@@ -66,7 +67,31 @@ class ViewController: NSViewController {
 
     
     @IBAction func recognizeFromImage(_ sender: Any) {
+        // set label and graph path
         
+        labelPath = "/Users/shawon/Codes/ClassCodes/CSE499Project/Classifier/Training/retrained_labels.txt"
+        graphPath = "/Users/shawon/Codes/ClassCodes/CSE499Project/Classifier/Training/retrained_graph.pb"
+        
+        
+        // initiate task for running script
+        
+        let task = Process()
+        
+        task.launchPath = "/Users/shawon/anaconda/envs/cse499/bin/python"
+        task.arguments = [scriptPath, imagePath!, labelPath!, graphPath!]
+        
+        // create the pipe
+        
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        
+        // launch task
+        task.launch()
+        
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let output = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+        
+        resultLabel.stringValue = output! as String
     }
     
 

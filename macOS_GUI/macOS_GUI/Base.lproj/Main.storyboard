@@ -714,7 +714,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRj-ju-aeg">
-                                <rect key="frame" x="76" y="20" width="590" height="55"/>
+                                <rect key="frame" x="78" y="20" width="586" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" bezelStyle="round" id="oUN-mM-v9z">
                                     <font key="font" metaFont="system" size="16"/>
