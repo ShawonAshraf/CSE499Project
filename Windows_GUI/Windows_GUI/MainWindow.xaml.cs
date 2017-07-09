@@ -72,10 +72,7 @@ namespace Windows_GUI
                 Process p = new Process();
 
                 string prog = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Local\\Programs\\Python\\Python35-32\\python.exe");
-
-                MessageBox.Show(prog);
-                MessageBox.Show(args);
-
+                
                 p.StartInfo = new ProcessStartInfo(prog, args);
                 p.StartInfo.UseShellExecute = false;
                 p.StartInfo.CreateNoWindow = true;
