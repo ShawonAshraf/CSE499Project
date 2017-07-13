@@ -11,4 +11,6 @@ graph = sys.argv[3]
 cls = Classifier(img_path=image_path, label_path=label, graph_path=graph)
 f, s = cls.classify()
 
-print("Fruit : {}\n".format(f))
+outp = open('result.txt', 'w')
+outp.write("Fruit : {}\n".format(f))
+outp.close()
