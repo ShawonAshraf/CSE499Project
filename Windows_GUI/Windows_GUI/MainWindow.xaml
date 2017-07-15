@@ -10,6 +10,5 @@
         <Image x:Name="ImgBox" HorizontalAlignment="Left" Height="852" Margin="10,10,0,0" VerticalAlignment="Top" Width="1136" Stretch="Uniform"/>
         <Button x:Name="OpenFileButn" Content="Select Image" HorizontalAlignment="Left" Margin="1185,10,0,0" VerticalAlignment="Top" Width="121" Height="32" Click="OpenFileButn_Click"/>
         <Button x:Name="ViewResultButn" Content="Display Result" HorizontalAlignment="Left" Margin="1185,70,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="0.187,-0.1" Height="32" Click="ViewResultButn_Click" IsEnabled="False"/>
-
     </Grid>
 </Window>

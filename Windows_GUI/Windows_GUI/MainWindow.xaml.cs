@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Timers;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -60,47 +61,51 @@ namespace Windows_GUI
                 motherpath = Directory.GetParent(motherpath).ToString();
             // motherpath-এর ভ্যালু এখন CSE499Project নামক ফোল্ডারের পাথ
 
-            string labelpath = System.IO.Path.Combine(motherpath, "Classifier\\Training\\retrained_labels.txt");
-            string graphpath = System.IO.Path.Combine(motherpath, "Classifier\\Training\\retrained_graph.pb");
-            string scriptpath = System.IO.Path.Combine(motherpath, "gui_linker.py");
+            string labelpath = Path.Combine(motherpath, "Classifier\\Training\\retrained_labels.txt");
+            string graphpath = Path.Combine(motherpath, "Classifier\\Training\\retrained_graph.pb");
+            string scriptpath = Path.Combine(motherpath, "gui_linker.py");
 
             string args = scriptpath + " " + imagepath + " " + labelpath + " " + graphpath;
 
             string output = RunPythonScript(args);
 
-            if(output != "ERROR")
+            if (output != "ERROR")
                 MessageBox.Show(output, "Output", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+                MessageBox.Show("Program not working. Contact maacpiash and tell him that the problem is" + Environment.NewLine + output,
+                    "ERROR!", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private string RunPythonScript(string args)
         {
+            string output;
+
             try
             {
-                Process running = new Process();
+                Process temp = new Process();
 
                 string prog = string.Format(@"C:\\ProgramData\\Anaconda3\\python.exe");
 
-                running.StartInfo = new ProcessStartInfo(prog, args)
+                temp.StartInfo = new ProcessStartInfo(prog, args)
                 {
                     UseShellExecute = false,
-                    CreateNoWindow = false,
-                    RedirectStandardOutput = false,
+                    CreateNoWindow = true,
+                    RedirectStandardOutput = true,
                     RedirectStandardError = false
                 };
 
-                Process processChild = Process.Start(running.StartInfo);
-                processChild.WaitForExit();
-                MessageBox.Show("Process ended with exit code " + processChild.ExitCode);
-                Console.ReadLine();
-                //return output;
-                return File.ReadAllLines(Path.Combine(motherpath, "result.txt")).FirstOrDefault();
+                Process running = Process.Start(temp.StartInfo);
+                running.Start();
+
+                output = running.StandardOutput.ReadToEnd();
+                running.WaitForExit();
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
-                return "ERROR";
+                output = x.GetType().ToString();
             }
+            
+            return output;
         }
-    
     }
 }
