@@ -1,0 +1,14 @@
+﻿<Window x:Class="Windows_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Windows_GUI"
+        mc:Ignorable="d"
+        Height="900" Width="1350" Title="Recognition of Condition of Fruit : CSE499 Capstone Project">
+    <Grid>
+        <Image x:Name="ImgBox" HorizontalAlignment="Left" Height="852" Margin="10,10,0,0" VerticalAlignment="Top" Width="1136" Stretch="Uniform"/>
+        <Button x:Name="OpenFileButn" Content="Select Image" HorizontalAlignment="Left" Margin="1185,10,0,0" VerticalAlignment="Top" Width="121" Height="32" Click="OpenFileButn_Click"/>
+        <Button x:Name="ViewResultButn" Content="Display Result" HorizontalAlignment="Left" Margin="1185,70,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="0.187,-0.1" Height="32" Click="ViewResultButn_Click" IsEnabled="False"/>
+    </Grid>
+</Window>
