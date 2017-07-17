@@ -42,14 +42,16 @@ namespace Windows_GUI
 
             if (ofd.ShowDialog() == true)
                 imagepath = ofd.FileName;
-            if (imagepath == null) return;
-            else ViewResultButn.IsEnabled = true;
+            if (imagepath == null)
+                return;
+            else
+                ViewResultButn.IsEnabled = true;
 
             BitmapImage pic = new BitmapImage();
             pic.BeginInit();
             pic.UriSource = new Uri(imagepath);
             pic.EndInit();
-
+            imagepath = '"' + imagepath + '"';
             ImgBox.Source = pic;
         }
 
@@ -94,11 +96,11 @@ namespace Windows_GUI
                     RedirectStandardError = false
                 };
 
-                Process running = Process.Start(temp.StartInfo);
-                running.Start();
+                Process actual_process = Process.Start(temp.StartInfo);
+                actual_process.Start();
+                actual_process.WaitForExit();
 
-                output = running.StandardOutput.ReadToEnd();
-                running.WaitForExit();
+                output = actual_process.StandardOutput.ReadToEnd();
             }
             catch (Exception x)
             {
