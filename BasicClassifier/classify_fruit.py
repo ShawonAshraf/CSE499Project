@@ -37,7 +37,6 @@ def classify(image_path):
 
         print('\nDONE===========================', end='')
 
-
 # now testing
 
 mango_images = [
@@ -53,10 +52,12 @@ mango_images = [
 ]
 
 banana_images = [
-    'img_test/banana.jpeg'
+    'img_test/banana.jpeg',
+    'img_test/banana_2.JPG',    
 ]
 
 process_list = mango_images + banana_images
+print("Number of images in test set : {}".format(len(process_list)))
 
 for image in process_list:
     try:
