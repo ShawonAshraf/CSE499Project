@@ -63,7 +63,8 @@ for image in process_list:
     try:
         print('Input image = {}'.format(image))
         init_time = time.time()
-        classify(image)
+        # classify(image)
+        print(classify(image_path=image))
         end_time = time.time()
         exec_time = end_time - init_time
         print(" in {} s\n\n".format(exec_time))
