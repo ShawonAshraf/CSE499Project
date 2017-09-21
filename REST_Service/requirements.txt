@@ -8,6 +8,7 @@ cycler==0.10.0
 decorator==4.0.11
 entrypoints==0.2.2
 Flask==0.12.2
+Flask-Uploads==0.2.1
 html5lib==0.9999999
 idna==2.6
 ipykernel==4.6.1
@@ -46,7 +47,7 @@ qtconsole==4.3.0
 requests==2.18.4
 simplegeneric==0.8.1
 six==1.10.0
-tensorflow-gpu==1.2.1
+tensorflow==1.2.1
 testpath==0.3
 tornado==4.5.1
 traitlets==4.3.2
