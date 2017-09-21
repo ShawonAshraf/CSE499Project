@@ -11,7 +11,7 @@
 - https://arxiv.org/abs/1512.00567
 - http://nicolovaligi.com/history-inception-deep-learning-architecture.html
 - https://arxiv.org/abs/1409.4842
-
+- https://arxiv.org/pdf/1701.06487.pdf
 
 
 ### Resources
