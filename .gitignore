@@ -209,7 +209,7 @@ CTestTestfile.cmake
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
-build/
+build/না?
 DerivedData/
 
 ## Various settings
@@ -812,5 +812,29 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# ignore the cloned tensorflow repo
+# ignore image dirs to minimize
+tensorflow/
+img_data/
+training_summaries/
+bottlenecks/
+inception/
+img_test/
+retrained_graph.pb
+retrained_labels.txt
+training_summaries/basic/train/
+training_summaries/basic/validation/
+*.pb
+*.local
+BasicClassifier/inception/inception-2015-12-05.tgz
+BasicClassifier/inception/classify_image_graph_def.pb
+
+.vscode
+
+# git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch BasicClassifier/inception/inception-2015-12-05.tgz'
+# git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch BasicClassifier/inception/classify_image_graph_def.pb'
+# git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch *.local'
+
 
 # End of https://www.gitignore.io/api/osx,c++,cmake,clion,linux,swift,xcode,pycharm,windows,intellij,phpstorm,webstorm,virtualenv,objective-c,aptanastudio,visualstudio,visualstudiocode
