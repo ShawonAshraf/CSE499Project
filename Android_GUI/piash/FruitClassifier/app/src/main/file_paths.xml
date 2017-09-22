@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--<paths xmlns:android="http://schemas.android.com/apk/res/android">-->
+    <!--<external-path name="my_images" path="Android/data/com.example.package.name/files/Pictures" />-->
+<!--</paths>-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nsu.piash.fruitclassifier">
 
@@ -27,12 +31,11 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/scratch"></meta-data>
         </provider>
 
 
 
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>
