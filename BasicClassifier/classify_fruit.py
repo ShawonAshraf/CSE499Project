@@ -60,3 +60,5 @@ for image in process_list:
         print(" in {} s\n\n".format(exec_time))
     except FileNotFoundError:
         print('{} not found\n\n'.format(image))
+    except Exception as e:
+        pass
