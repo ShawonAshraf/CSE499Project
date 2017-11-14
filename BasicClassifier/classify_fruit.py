@@ -48,6 +48,7 @@ test_images = [test_image_path+x for x in os.listdir(test_image_path)]
 process_list = test_images
 print("Number of images in test set : {}".format(len(process_list)))
 
+
 for image in process_list:
     try:
         print('Input image = {}'.format(image))
