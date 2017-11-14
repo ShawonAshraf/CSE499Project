@@ -39,24 +39,13 @@ def classify(image_path):
 
 # now testing
 
-mango_images = [
-    'img_test/green_mangoes.jpg',
-    'img_test/green_mango_2.jpg',
-    'img_test/overripe_ataulfo_mango.png',
-    'img_test/ripe_mango_1.jpg',
-    'img_test/ripe_mango_2.jpg',
-    'img_test/rotten_mango.jpg',
-    'img_test/mango_001.jpg',
-    'img_test/Mango_Ataulfo.jpg',
-    'img_test/gvr.jpg',
-]
+# empty init list
+test_images = []
+test_image_path = 'img_test/'
 
-banana_images = [
-    'img_test/banana.jpeg',
-    'img_test/banana_2.JPG',    
-]
+test_images = [test_image_path+x for x in os.listdir(test_image_path)]
 
-process_list = mango_images + banana_images
+process_list = test_images
 print("Number of images in test set : {}".format(len(process_list)))
 
 for image in process_list:
