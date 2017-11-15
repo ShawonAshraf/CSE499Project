@@ -1,0 +1,84 @@
+Run 1 K = 10
+[INFO] pixels matrix: 143.95MB
+[INFO] features matrix: 383.87MB
+[INFO] evaluating raw pixel accuracy...
+[INFO] k-NN classifier: k=10
+[INFO] raw pixel accuracy: 44.44%
+
+
+[INFO] evaluating histogram accuracy...
+[INFO] k-NN classifier: k=10
+[INFO] histogram accuracy: 48.44%
+
+
+[INFO] evaluating raw pixel accuracy...
+[INFO] neural network raw pixel accuracy: 36.89%
+
+
+[INFO] evaluating histogram accuracy...
+[INFO] neural network histogram accuracy: 43.56%
+
+
+Run 2 K = 5
+[INFO] pixels matrix: 143.95MB
+[INFO] features matrix: 383.87MB
+[INFO] evaluating raw pixel accuracy...
+[INFO] k-NN classifier: k=5
+[INFO] raw pixel accuracy: 42.44%
+
+
+[INFO] evaluating histogram accuracy...
+[INFO] k-NN classifier: k=5
+[INFO] histogram accuracy: 45.56%
+
+
+[INFO] evaluating raw pixel accuracy...
+[INFO] neural network raw pixel accuracy: 36.89%
+
+
+[INFO] evaluating histogram accuracy...
+[INFO] neural network histogram accuracy: 43.56%
+20171114063103
+
+
+
+[INFO] pixels matrix: 143.95MB
+[INFO] features matrix: 383.87MB
+[INFO] evaluating raw pixel accuracy...
+[INFO] k-NN classifier: k=15
+[INFO] raw pixel accuracy: 46.44%
+
+
+[INFO] evaluating histogram accuracy...
+[INFO] k-NN classifier: k=15
+[INFO] histogram accuracy: 45.78%
+
+
+[INFO] evaluating raw pixel accuracy...
+[INFO] neural network raw pixel accuracy: 36.89%
+
+
+[INFO] evaluating histogram accuracy...
+[INFO] neural network histogram accuracy: 43.56%
+20171114063616
+
+
+
+[INFO] pixels matrix: 143.95MB
+[INFO] features matrix: 383.87MB
+[INFO] evaluating raw pixel accuracy...
+[INFO] k-NN classifier: k=3
+[INFO] raw pixel accuracy: 40.00%
+
+
+[INFO] evaluating histogram accuracy...
+[INFO] k-NN classifier: k=3
+[INFO] histogram accuracy: 44.22%
+
+
+[INFO] evaluating raw pixel accuracy...
+[INFO] neural network raw pixel accuracy: 36.89%
+
+
+[INFO] evaluating histogram accuracy...
+[INFO] neural network histogram accuracy: 43.56%

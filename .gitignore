@@ -825,6 +825,7 @@ retrained_graph.pb
 retrained_labels.txt
 training_summaries/basic/train/
 training_summaries/basic/validation/
+dataset/
 *.pb
 *.local
 BasicClassifier/inception/inception-2015-12-05.tgz
