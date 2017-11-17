@@ -817,6 +817,7 @@ __pycache__/
 # ignore image dirs to minimize
 tensorflow/
 img_data/
+img_data_v4/
 training_summaries/
 bottlenecks/
 inception/
