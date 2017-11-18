@@ -835,6 +835,9 @@ BasicClassifier/inception/classify_image_graph_def.pb
 
 .vscode
 
+# keras models
+*.h5
+
 # git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch BasicClassifier/inception/inception-2015-12-05.tgz'
 # git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch BasicClassifier/inception/classify_image_graph_def.pb'
 # git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch *.local'
