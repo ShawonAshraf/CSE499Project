@@ -2,11 +2,11 @@ from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_a
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Activation, Flatten, Dropout, Dense
 from keras import backend as K
+import h5py
 
 # dataset dir
-dataset_root = "img_data/train/"
-validation_root = "img_data/validation/"
-preview_dir = "img_data/preview/"
+dataset_root = "img_data/bin_class/train/"
+validation_root = "img_data/bin_class/validation/"
 
 # number of train and validation samples
 n_train = int(1313 * 0.80)
@@ -44,9 +44,9 @@ model.add(Dense(64))
 model.add(Activation("relu"))
 model.add(Dropout(0.5))
 model.add(Dense(1))
-model.add(Activation("softmax"))
+model.add(Activation("sigmoid"))
 
-model.compile(loss="sparse_categorical_crossentropy", optimizer="sgd", metrics=["categorical_accuracy"])
+model.compile(loss="binary_crossentropy", optimizer="rmsprop", metrics=["accuracy"])
 
 # data preparation
 batch_size = 16
@@ -61,11 +61,11 @@ test_datagen = ImageDataGenerator(rescale=1. / 255)
 
 # generators for train and validation
 train_generator = train_datagen.flow_from_directory(dataset_root, target_size=(img_width, img_height),
-                                                    class_mode="categorical",
+                                                    class_mode="binary",
                                                     batch_size=batch_size)
 validation_generator = test_datagen.flow_from_directory(validation_root, target_size=(img_width, img_height),
                                                         batch_size=batch_size,
-                                                        class_mode="categorical")
+                                                        class_mode="binary")
 
 # train
 model.fit_generator(train_generator, steps_per_epoch=n_train // batch_size, epochs=50,
