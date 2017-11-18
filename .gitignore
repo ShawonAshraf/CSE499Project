@@ -818,6 +818,7 @@ __pycache__/
 tensorflow/
 img_data/
 img_data_v4/
+img_data_v5/
 training_summaries/
 bottlenecks/
 inception/
