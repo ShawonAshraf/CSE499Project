@@ -1,5 +1,5 @@
-import os, random
-
+import os
+import random
 from shutil import copyfile
 
 random.seed(42)
