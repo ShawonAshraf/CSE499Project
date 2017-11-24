@@ -46,7 +46,7 @@ model.add(Dropout(0.5))
 model.add(Dense(1))
 model.add(Activation("sigmoid"))
 
-model.compile(loss="hinge", optimizer="adagrad", metrics=["accuracy"])
+model.compile(loss="binary_crossentropy", optimizer="adagrad", metrics=["accuracy"])
 
 # data preparation
 batch_size = 16
@@ -70,4 +70,5 @@ validation_generator = test_datagen.flow_from_directory(validation_root, target_
 # train
 model.fit_generator(train_generator, steps_per_epoch=n_train // batch_size, epochs=50,
                     validation_data=validation_generator, validation_steps=n_valid // batch_size)
-model.save_weights("saved_models/train_1.h5")
+model.save_weights("saved_models/train_1_weight.h5")
+model.save("saved_models/bin_model_1.h5")
