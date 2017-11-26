@@ -40,29 +40,16 @@ def classify(image_path):
 
 # now testing
 
-mango_images = [
-    'img_test/green_mangoes.jpg',
-    'img_test/green_mango_2.jpg',
-    'img_test/overripe_ataulfo_mango.png',
-    'img_test/ripe_mango_1.jpg',
-    'img_test/ripe_mango_2.jpg',
-    'img_test/rotten_mango.jpg',
-    'img_test/mango_001.jpg',
-    'img_test/Mango_Ataulfo.jpg',
-    'img_test/gvr.jpg',
-]
+image_test_root_dir = 'img_test/'
+test_image_list = os.listdir(image_test_root_dir)
 
-banana_images = [
-    'img_test/banana.jpeg'
-]
 
-process_list = mango_images + banana_images
-
-for image in process_list:
+for image in test_image_list:
     try:
         print('Input image = {}'.format(image))
         init_time = time.time()
-        classify(image)
+        image_path = os.path.join(image_test_root_dir, image)
+        classify(image_path)
         end_time = time.time()
         exec_time = end_time - init_time
         print(" in {} s\n\n".format(exec_time))

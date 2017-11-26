@@ -838,3 +838,16 @@ BasicClassifier/inception/classify_image_graph_def.pb
 
 
 # End of https://www.gitignore.io/api/osx,c++,cmake,clion,linux,swift,xcode,pycharm,windows,intellij,phpstorm,webstorm,virtualenv,objective-c,aptanastudio,visualstudio,visualstudiocode
+*.jpg
+
+*.png
+
+*.h5
+
+*.jpeg
+
+*.bmp
+
+*.xml
+
+*.gif
