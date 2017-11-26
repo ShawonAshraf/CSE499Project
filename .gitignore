@@ -851,3 +851,5 @@ BasicClassifier/inception/classify_image_graph_def.pb
 *.xml
 
 *.gif
+
+*.shawon-pc
