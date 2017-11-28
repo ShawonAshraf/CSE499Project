@@ -61,22 +61,22 @@ image_test_root_dir = 'img_test/'
 test_image_list = os.listdir(image_test_root_dir)
 
 
-# for image in test_image_list:
-#     try:
-#         print('Input image = {}'.format(image))
-#         init_time = time.time()
-#         image_path = os.path.join(image_test_root_dir, image)
-#         l, p, k = classify(image_path)
-#         end_time = time.time()
-#         exec_time = end_time - init_time
-#         print(" in {} s\n\n".format(exec_time))
-#         get_cnf_matrix(l, p)
-#     except FileNotFoundError:
-#         print('{} not found\n\n'.format(image))
+for image in test_image_list:
+    try:
+        print('Input image = {}'.format(image))
+        init_time = time.time()
+        image_path = os.path.join(image_test_root_dir, image)
+        l, p, k = classify(image_path)
+        end_time = time.time()
+        exec_time = end_time - init_time
+        print(" in {} s\n\n".format(exec_time))
+        # get_cnf_matrix(l, p)
+    except FileNotFoundError:
+        print('{} not found\n\n'.format(image))
 
 
-# test for one image
-test_image = os.path.join(image_test_root_dir, test_image_list[0])
-l, p, k = classify(test_image)
-
-get_cnf_matrix(k, p[0])
+# # test for one image
+# test_image = os.path.join(image_test_root_dir, test_image_list[0])
+# l, p, k = classify(test_image)
+#
+# get_cnf_matrix(k, p[0])
