@@ -827,6 +827,8 @@ retrained_graph.pb
 retrained_labels.txt
 training_summaries/basic/train/
 training_summaries/basic/validation/
+training_summaries_new/basic/train/
+training_summaries_new/basic/validation/
 dataset/
 *.pb
 *.local
@@ -847,3 +849,7 @@ BasicClassifier/inception/classify_image_graph_def.pb
 
 
 # End of https://www.gitignore.io/api/osx,c++,cmake,clion,linux,swift,xcode,pycharm,windows,intellij,phpstorm,webstorm,virtualenv,objective-c,aptanastudio,visualstudio,visualstudiocode
+
+BasicClassifier/training_summaries_new/basic/train/
+
+BasicClassifier/training_summaries_new/basic/validation/

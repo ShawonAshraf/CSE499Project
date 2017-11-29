@@ -4,7 +4,7 @@ from shutil import copyfile
 
 random.seed(42)
 
-main_dataset_dir_root = "../img_data_v5/"
+main_dataset_dir_root = "../img_data_v5/for_bin_class"
 work_dataset_dir_root = "img_data/"
 
 # get categories

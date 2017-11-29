@@ -5,8 +5,8 @@ from keras import backend as K
 import h5py
 
 # dataset dir
-dataset_root = "img_data/bin_class/train/"
-validation_root = "img_data/bin_class/validation/"
+dataset_root = "img_data/train/"
+validation_root = "img_data/validation/"
 
 # number of train and validation samples
 n_train = int(1313 * 0.80)

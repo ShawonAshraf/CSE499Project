@@ -2,7 +2,7 @@ import os
 
 
 IMAGE_ROOT_DIR = "img_data/"
-IMAGE_DEST_DIR = "img_data_v4/"
+IMAGE_DEST_DIR = "img_test/"
 
 FILE_TO_REMOVE = "desktop.ini"
 
